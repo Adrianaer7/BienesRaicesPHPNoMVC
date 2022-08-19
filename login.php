@@ -2,6 +2,12 @@
     //Importar template
     require "includes/funciones.php";
     incluirTemplate("header");
+    
+    //Redirecciono al usuario si ya está logeado
+    session_start();
+    if($_SESSION["login"]) {
+        header("Location: /admin");
+    }
 
     //Importar BD
     require "includes/config/database.php";
