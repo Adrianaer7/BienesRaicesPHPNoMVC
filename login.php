@@ -4,8 +4,8 @@
     incluirTemplate("header");
     
     //Redirecciono al usuario si ya está logeado
-    session_start();
-    if($_SESSION["login"]) {
+    $auth = estadoAutenticado();
+    if($auth) {
         header("Location: /admin");
     }
 
